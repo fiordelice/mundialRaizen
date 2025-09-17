@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usina Inteligente Raízen</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🌿 Raízen Mundial - Sistema de Monitoramento de Cana</h1>
+  </header>
+
+  <main>
+    <!-- Cadastro Fazenda -->
+    <section class="card">
+      <h2>Cadastrar Fazenda</h2>
+      <form id="fazendaForm">
+        <input type="text" id="nomeFazenda" placeholder="Nome da Fazenda" required>
+        <input type="number" id="hectares" placeholder="Hectares" required>
+        <select id="tipoCana" required>
+          <option value="">Tipo de Cana</option>
+          <option value="RB867515">RB867515</option>
+          <option value="IAC">IAC</option>
+          <option value="CTC">CTC</option>
+        </select>
+        <input type="number" id="umidade" placeholder="Umidade do Solo (%)" required>
+        <button type="submit">Adicionar Fazenda</button>
+      </form>
+      <div class="message" id="fazendaMessage"></div>
+    </section>
+
+    <!-- Registro Produção -->
+    <section class="card">
+      <h2>Registrar Produção</h2>
+      <form id="producaoForm">
+        <select id="fazendaSelect" required></select>
+        <input type="number" id="toneladas" placeholder="Produção em toneladas" required>
+        <button type="submit">Registrar Produção</button>
+      </form>
+      <div class="message" id="producaoMessage"></div>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="card">
+      <h2>Dashboard</h2>
+      <canvas id="grafico"></canvas>
+    </section>
+
+    <!-- Tabela de Produção -->
+    <section class="card">
+      <h2>Produção das Fazendas</h2>
+      <div class="table-container">
+        <table id="tabela">
+          <thead>
+            <tr>
+              <th>Fazenda</th>
+              <th>Hectares</th>
+              <th>Produtividade (t/ha)</th>
+              <th>Açúcar (kg)</th>
+              <th>Etanol (L)</th>
+              <th>CO₂ evitado (kg)</th>
+              <th>Energia (MWh)</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Raízen Mundial | Sistema de Monitoramento de Cana</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
